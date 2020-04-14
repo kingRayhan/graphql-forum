@@ -1,0 +1,70 @@
+input createThreadInput {
+	title: String!
+	body: String!
+}
+
+input updateThreadInput {
+	title: String
+	body: String
+}
+
+input createUserInput {
+	name: String!
+	profilePhoto: String
+	email: String!
+	username: String!
+	password: String!
+}
+
+input updateUserInput {
+	name: String
+	profilePhoto: String
+	email: String
+	username: String
+	password: String
+}
+
+input loginInput {
+	user: String
+	password: String
+}
+
+type AuthPayload {
+	user: User!
+	token: String!
+}
+
+type User {
+	_id: ID!
+	name: String!
+	profilePhoto: String
+	email: String!
+	username: String!
+}
+
+type Thread {
+	_id: ID!
+	title: String!
+	slug: String!
+	body: String!
+	author: User!
+}
+
+type Query {
+	threads(limit: Int, skip: Int, page: Int): [Thread!]
+	thread(_id: ID!): Thread
+	users(limit: Int, skip: Int, page: Int): [User!]
+}
+
+type Mutation {
+	# Thread
+	createThread(data: createThreadInput!): Thread!
+	updateThread(_id: ID!, data: updateThreadInput!): Thread!
+	deleteThread(_id: ID!): Thread!
+
+	# User
+	register(data: createUserInput!): User!
+	login(data: loginInput!): AuthPayload!
+	updateProfile(_id: ID!, data: updateUserInput!): User!
+	deleteUser(_id: ID!): User!
+}

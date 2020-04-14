@@ -1,0 +1,26 @@
+{
+	"name": "gql",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "nodemon --exec babel-node src/server.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@babel/cli": "^7.8.4",
+		"@babel/core": "^7.9.0",
+		"@babel/node": "^7.8.7",
+		"@babel/preset-env": "^7.9.5",
+		"bcryptjs": "^2.4.3",
+		"dotenv": "^8.2.0",
+		"graphql-tag": "^2.10.3",
+		"graphql-yoga": "^1.18.3",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^5.9.9",
+		"shortid": "^2.2.15",
+		"validator": "^13.0.0"
+	}
+}
