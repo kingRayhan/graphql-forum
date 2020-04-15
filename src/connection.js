@@ -1,11 +1,14 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
 mongoose
-	.connect('mongodb://rayhan:rayhan123@ds255588.mlab.com:55588/graphql-forum', {
-		useUnifiedTopology: true,
-		useNewUrlParser: true,
-		useCreateIndex: true
-	})
-	.then(() => {
-		console.log('DB connected')
-	})
+  .connect(
+    "mongodb+srv://shoaib:shoaib@cluster0-sg9w3.mongodb.net/graphql-forum?retryWrites=true&w=majority",
+    {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+      useCreateIndex: true,
+    }
+  )
+  .then(() => {
+    console.log("DB connected");
+  });
